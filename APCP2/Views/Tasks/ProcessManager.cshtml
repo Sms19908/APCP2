@@ -1,0 +1,48 @@
+﻿@model IEnumerable<APCP2.Data.TaskManager>
+@{
+    ViewBag.Title = "ProcessManager";
+}
+
+<h2>ProcessManager</h2>
+<div style="height: 1800px; overflow-y: scroll; border: 1px solid #333333;">
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid #ccc; padding: 8px;">Task Id</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Name</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Description</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Status</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Priority</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Assigned To</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Created Date</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Modified Date</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Due Date</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Completed Date</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Category</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Notes</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Archived </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.TaskID)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.Status)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.Priority)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.AssignedTo)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.ModifiedDate)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.DueDate)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.CompletedDate)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.Category)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.Notes)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">@Html.DisplayFor(modelItem => item.IsArchived)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
